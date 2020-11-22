@@ -3,12 +3,12 @@
 
 #include "stdafx.h"
 #include <iostream>
-#include "Creatures.cpp"
+#include "Heroes.cpp"
 #include "windows.h"
 
 using namespace std;
 
-int isDead(Creature *c)
+int isDead(Hero *c)
 {
 	return !c->Get_healthPoints();
 }
@@ -34,9 +34,11 @@ int main()
 	case 2:
 	{
 		Necromancer *n = new Necromancer(name);
+		cout << n->Get_healthPoints();
+		n->Set_healthPoints(0);
+		n->Die();
 		break;
 	}
-
 	}
 	/*Sorcerer *s = new Sorcerer("Dumbledore");
 	printf("%d\n", s->Get_attackPoints());
